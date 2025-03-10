@@ -11,6 +11,7 @@
  * + Elevens()                      *
  * + SetUp()                        *
  * + SelectCard(card : Card)        *
+ * + DeselectCard(card : Card)      *
  * + ValidateReplace() : bool       *
  * + ValidMoveRemaining() : bool    *
  * + OnReplace()                    *
@@ -54,6 +55,12 @@ public class Elevens
     public void SelectCard(Card card) => _selectedCards.Add(card);
 
     /// <summary>
+    /// Removes the given card from the selected cards list
+    /// </summary>
+    /// <param name="card">The card to be selected</param>
+    public void DeselectCard(Card card) => _selectedCards.Remove(card);
+
+    /// <summary>
     /// Checks whether the cards in the selected cards list form
     /// a valid group of cards to replace. Valid cards include any
     /// pair whose values add to 11, or a Jack, Queen, King triplet.
@@ -61,7 +68,31 @@ public class Elevens
     /// <returns>True if valid, false otherwise</returns>
     public bool ValidateReplace()
     {
+        switch (_selectedCards.Count)
+        {
+            default:
+                return false;
+            case 2:
+                int total = 0;
+                foreach (Card card in _selectedCards)
+                    total += (int)card.Rank;
 
+                return total == 11;
+            case 3:
+                bool hasJack = false;
+                bool hasQueen = false;
+                bool hasKing = false;
+                foreach (Card card in _selectedCards)
+                {
+                    if (card.Rank == Rank.Jack)
+                        hasJack = true;
+                    if (card.Rank == Rank.Queen)
+                        hasQueen = true;
+                    if (card.Rank == Rank.King)
+                        hasKing = true;
+                }
+                return hasJack && hasQueen && hasKing;
+        }
     }
 
     /// <summary>
@@ -71,7 +102,38 @@ public class Elevens
     /// <returns>True if a valid move exists, false otherwise</returns>
     public bool ValidMoveRemaining()
     {
+        foreach (Card card in _board.TableCards)
+        {
+            Rank pairRank;
+            switch (card.Rank)
+            {
+                default: continue;
+                case Rank.Ace:
+                    pairRank = Rank.Ten;
+                    break;
+                case Rank.Two:
+                    pairRank = Rank.Nine;
+                    break;
+                case Rank.Three:
+                    pairRank = Rank.Eight;
+                    break;
+                case Rank.Four:
+                    pairRank = Rank.Seven;
+                    break;
+                case Rank.Five:
+                    pairRank = Rank.Six;
+                    break;
+                case Rank.Jack:
+                    if(_board.ContainsRank(card, Rank.Queen) && _board.ContainsRank(card, Rank.King))
+                        return true;
+                    continue;
+            }
 
+            if (_board.ContainsRank(card, pairRank))
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>
