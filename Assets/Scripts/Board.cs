@@ -9,6 +9,7 @@
  *****************************************************************
  * + Board()                                                     *
  * + ReplaceCards(index1 : int, index2 : int, index3 : int = -1) *
+ * + ContainsRank(card : Card, rank : Rank)                      *
  *****************************************************************/
 
 using System.Collections.Generic;
@@ -62,5 +63,25 @@ public class Board
         if (newCard == null)
             return;
         TableCards.Insert(index3, newCard);
+    }
+
+    /// <summary>
+    /// Checks if the board contains a card with the specified rank
+    /// </summary>
+    /// <param name="card">The card to skip</param>
+    /// <param name="rank">The rank to search for</param>
+    /// <returns></returns>
+    public bool ContainsRank(Card card, Rank rank)
+    {
+        foreach (Card tableCard in TableCards)
+        {
+            if (tableCard == card)
+                continue;
+
+            if (tableCard.Rank == rank)
+                return true;
+        }
+
+        return false;
     }
 }
