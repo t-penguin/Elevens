@@ -33,7 +33,9 @@ public class Elevens
     /// </summary>
     public Elevens()
     {
-
+        _gamesPlayed = 0;
+        _gamesWon = 0;
+        SetUp();
     }
 
     /// <summary>
@@ -41,17 +43,15 @@ public class Elevens
     /// </summary>
     public void SetUp()
     {
-
+        _board = new Board();
+        _selectedCards = new List<Card>();
     }
 
     /// <summary>
     /// Adds the given card to the selected cards list
     /// </summary>
     /// <param name="card">The card to be selected</param>
-    public void SelectCard(Card card)
-    {
-
-    }
+    public void SelectCard(Card card) => _selectedCards.Add(card);
 
     /// <summary>
     /// Checks whether the cards in the selected cards list form
