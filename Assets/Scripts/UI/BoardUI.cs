@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,17 @@ public class BoardUI : MonoBehaviour
     [SerializeField] private Transform _board;
     [SerializeField] private RectTransform[] _tableCards;
 
+    private Dictionary<string, Sprite> _cardSprites;
+
+    private const string CARD_SPRITES_PATH = "Spritesheets/Cards";
+
     #region Monobehaviour Callbacks
+
+    private void Awake()
+    {
+        _cardSprites = new Dictionary<string, Sprite>();
+        LoadCardSprites(CARD_SPRITES_PATH);
+    }
 
     private void OnEnable()
     {
@@ -62,4 +73,30 @@ public class BoardUI : MonoBehaviour
     }
 
     #endregion
+
+    /// <summary>
+    /// Retrieves sprites for all the cards from the Textures folder in Resources. 
+    /// Stores these sprites into a dictionary for quick retrieval.
+    /// </summary>
+    /// <param name="path">The path to the sliced spritesheet containing all the card sprites</param>
+    private void LoadCardSprites(string path)
+    {
+        Sprite[] sprites = Resources.LoadAll<Sprite>(path);
+
+        foreach (Sprite sprite in sprites)
+            _cardSprites.Add(sprite.name, sprite);
+    }
+
+    /// <summary>
+    /// Fetches a card sprite from the dictionary.
+    /// </summary>
+    /// <param name="name">The name of the card to retrieve in the form of {suit}_{faceValue}.</param>
+    /// <returns>The sprite of the card with the given name, null if not found.</returns>
+    public Sprite GetCardSpriteByName(string name)
+    {
+        if (_cardSprites.ContainsKey(name))
+            return _cardSprites[name];
+        else
+            return null;
+    }
 }
