@@ -31,6 +31,15 @@ public class BoardUI : MonoBehaviour
     {
         SetBoardLayout(boardSize);
 
+        if (_tableCards != null && _tableCards.Length == boardSize)
+            return;
+
+        if (_tableCards != null)
+        {
+            for (int i = 0; i < _tableCards.Length; i++)
+                Destroy(_tableCards[i]);
+        }
+
         _tableCards = new RectTransform[boardSize];
         for (int i = 0; i < boardSize; i++)
             _tableCards[i] = Instantiate(_tableCard, _board).GetComponent<RectTransform>();
