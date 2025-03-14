@@ -90,7 +90,7 @@ public class BoardUI : MonoBehaviour
     /// <summary>
     /// Fetches a card sprite from the dictionary.
     /// </summary>
-    /// <param name="name">The name of the card to retrieve in the form of {suit}_{faceValue}.</param>
+    /// <param name="name">The name of the card to retrieve in the form of {rank}_{suit}.</param>
     /// <returns>The sprite of the card with the given name, null if not found.</returns>
     public Sprite GetCardSpriteByName(string name)
     {
