@@ -7,6 +7,20 @@ public class BoardUI : MonoBehaviour
     [SerializeField] private Transform _board;
     [SerializeField] private RectTransform[] _tableCards;
 
+    #region Monobehaviour Callbacks
+
+    private void OnEnable()
+    {
+        EventManager.GameSettingUp += OnSetUp;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.GameSettingUp -= OnSetUp;
+    }
+
+    #endregion
+
     #region Event Callbacks
 
     /// <summary>
