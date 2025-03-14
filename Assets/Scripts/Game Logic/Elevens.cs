@@ -21,23 +21,77 @@
  ************************************/
 
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Elevens
+public class Elevens : MonoBehaviour
 {
     private Board _board;
     private List<Card> _selectedCards;
     private int _gamesPlayed;
     private int _gamesWon;
 
-    /// <summary>
-    /// Creates a new Elevens game
-    /// </summary>
-    public Elevens()
+    private const int BOARD_SIZE = 9;
+
+    #region Monobehaviour Callbacks
+
+    private void Start()
     {
         _gamesPlayed = 0;
         _gamesWon = 0;
-        SetUp();
     }
+
+    private void OnEnable()
+    {
+        EventManager.GameStarting += OnStartGame;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.GameStarting -= OnStartGame;
+    }
+
+    #endregion
+
+    #region Event Callbacks
+
+    private void OnStartGame() => SetUp();
+
+    /// <summary>
+    /// Response to the player's replace request. Validates the request and 
+    /// if succeeded, initiates a replace and checks if the game is won. If 
+    /// the game is not won, checks for any valid moves remaining. 
+    /// </summary>
+    public void OnReplace()
+    {
+
+    }
+
+    /// <summary>
+    /// Response to the player's restart request. Ends the current game 
+    /// as a loss and starts a new game.
+    /// </summary>
+    public void OnRestart()
+    {
+
+    }
+
+    /// <summary>
+    /// Response to the player winning a game. Increases the win counter.
+    /// </summary>
+    public void OnWin()
+    {
+
+    }
+
+    /// <summary>
+    /// Response to the player losing a game.
+    /// </summary>
+    public void OnLose()
+    {
+
+    }
+
+    #endregion
 
     /// <summary>
     /// Sets up the board for a new Elevens game
@@ -46,6 +100,7 @@ public class Elevens
     {
         _board = new Board();
         _selectedCards = new List<Card>();
+        EventManager.SetUpGame(BOARD_SIZE);
     }
 
     /// <summary>
@@ -134,40 +189,5 @@ public class Elevens
         }
 
         return false;
-    }
-
-    /// <summary>
-    /// Response to the player's replace request. Validates the request and 
-    /// if succeeded, initiates a replace and checks if the game is won. If 
-    /// the game is not won, checks for any valid moves remaining. 
-    /// </summary>
-    public void OnReplace()
-    {
-
-    }
-
-    /// <summary>
-    /// Response to the player's restart request. Ends the current game 
-    /// as a loss and starts a new game.
-    /// </summary>
-    public void OnRestart()
-    {
-
-    }
-
-    /// <summary>
-    /// Response to the player winning a game. Increases the win counter.
-    /// </summary>
-    public void OnWin()
-    {
-
-    }
-
-    /// <summary>
-    /// Response to the player losing a game.
-    /// </summary>
-    public void OnLose()
-    {
-
     }
 }
