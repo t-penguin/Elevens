@@ -36,6 +36,8 @@ public class Elevens : MonoBehaviour
 
     private void Start()
     {
+        _board = new Board(BOARD_SIZE);
+        _selectedCards = new List<Card>();
         _gamesPlayed = 0;
         _gamesWon = 0;
     }
