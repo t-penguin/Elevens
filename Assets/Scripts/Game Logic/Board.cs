@@ -19,11 +19,20 @@ public class Board
     public Deck Deck { get; private set; }
     public List<Card> TableCards { get; private set; }
 
+    private int _size;
+
     public Board(int size)
     {
+        _size = size;
         Deck = new Deck();
         Deck.Shuffle();
         TableCards = new List<Card>(size);
+    }
+
+    public void DealStartingCards()
+    {
+        for (int i = 0; i < _size; i++)
+            TableCards.Add(Deck.TakeTopCard());
     }
 
     /// <summary>
