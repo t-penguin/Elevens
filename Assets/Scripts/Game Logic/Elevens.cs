@@ -36,8 +36,6 @@ public class Elevens : MonoBehaviour
 
     private void Start()
     {
-        _board = new Board(BOARD_SIZE);
-        _selectedCards = new List<Card>();
         _gamesPlayed = 0;
         _gamesWon = 0;
     }
@@ -45,11 +43,13 @@ public class Elevens : MonoBehaviour
     private void OnEnable()
     {
         EventManager.GameStarting += OnStartGame;
+        EventManager.GameSetUp += OnFinishSetUp;
     }
 
     private void OnDisable()
     {
         EventManager.GameStarting -= OnStartGame;
+        EventManager.GameSetUp -= OnFinishSetUp;
     }
 
     #endregion
@@ -57,6 +57,7 @@ public class Elevens : MonoBehaviour
     #region Event Callbacks
 
     private void OnStartGame() => SetUp();
+    private void OnFinishSetUp() => FillTable();
 
     /// <summary>
     /// Response to the player's replace request. Validates the request and 
@@ -100,9 +101,15 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void SetUp()
     {
-        _board = new Board();
+        _board = new Board(BOARD_SIZE);
         _selectedCards = new List<Card>();
         EventManager.SetUpGame(BOARD_SIZE);
+    }
+
+    private void FillTable()
+    {
+        _board.DealStartingCards();
+        EventManager.DealtStartingCards(_board.TableCards);
     }
 
     /// <summary>
