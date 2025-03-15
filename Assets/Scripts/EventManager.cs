@@ -9,4 +9,8 @@ public static class EventManager
     // Set Up Game Event
     public static event Action<int> GameSettingUp;
     public static void SetUpGame(int boardSize) => GameSettingUp?.Invoke(boardSize);
+
+    // Game Set Up Event
+    public static event Action GameSetUp;
+    public static void FinishSetUp() => GameSetUp?.Invoke();
 }
