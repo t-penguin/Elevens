@@ -7,7 +7,7 @@
  * + Deck : Deck                                                 *
  * + TableCards : List<Card>                                     *
  *****************************************************************
- * + Board()                                                     *
+ * + Board(size : int)                                           *
  * + ReplaceCards(index1 : int, index2 : int, index3 : int = -1) *
  * + ContainsRank(card : Card, rank : Rank)                      *
  *****************************************************************/
@@ -19,11 +19,11 @@ public class Board
     public Deck Deck { get; private set; }
     public List<Card> TableCards { get; private set; }
 
-    public Board()
+    public Board(int size)
     {
         Deck = new Deck();
         Deck.Shuffle();
-        TableCards = new List<Card>(9);
+        TableCards = new List<Card>(size);
     }
 
     /// <summary>
@@ -35,7 +35,14 @@ public class Board
     /// <param name="index3">[Optional] The table index of the third card to replace</param>
     public void ReplaceCards(int index1, int index2, int index3 = -1)
     {
-        bool triplet = index3 != -1;
+        // Index out of bounds checks
+        bool index1oob = index1 < 0 || index1 >= TableCards.Count;
+        bool index2oob = index2 < 0 || index2 >= TableCards.Count;
+        bool index3oob = index3 >= TableCards.Count;
+        if (index1oob || index2oob || index3oob)
+            return;
+
+        bool triplet = index3 < 0;
 
         // Remove cards from table
         TableCards.RemoveAt(index1);
