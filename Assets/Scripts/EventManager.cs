@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public static class EventManager
 {
@@ -13,4 +14,8 @@ public static class EventManager
     // Game Set Up Event
     public static event Action GameSetUp;
     public static void FinishSetUp() => GameSetUp?.Invoke();
+
+    // Starting Cards Dealt Event
+    public static event Action<List<Card>> StartingCardsDealt;
+    public static void DealtStartingCards(List<Card> cards) => StartingCardsDealt?.Invoke(cards);
 }
