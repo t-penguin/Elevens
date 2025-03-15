@@ -10,7 +10,7 @@ public class BoardUI : MonoBehaviour
 
     private Dictionary<string, Sprite> _cardSprites;
 
-    private const string CARD_SPRITES_PATH = "Spritesheets/Cards";
+    private const string CARD_SPRITES_PATH = "Textures/Cards";
 
     #region Monobehaviour Callbacks
 
@@ -23,11 +23,13 @@ public class BoardUI : MonoBehaviour
     private void OnEnable()
     {
         EventManager.GameSettingUp += OnSetUp;
+        EventManager.StartingCardsDealt += OnStartingCardsDealt;
     }
 
     private void OnDisable()
     {
         EventManager.GameSettingUp -= OnSetUp;
+        EventManager.StartingCardsDealt -= OnStartingCardsDealt;
     }
 
     #endregion
@@ -62,6 +64,25 @@ public class BoardUI : MonoBehaviour
     }
 
     /// <summary>
+    /// Response to a game's StartingCardsDealt event. Sets the card sprites for all cards on the table.
+    /// Does nothing if the size of the list of cards and the table cards array don't match or the list is null.
+    /// </summary>
+    /// <param name="cards">A list of all the cards on the table</param>
+    private void OnStartingCardsDealt(List<Card> cards)
+    {
+        if (cards == null || cards.Count != _tableCards.Length)
+            return;
+
+        for (int i = 0; i < cards.Count; i++)
+        {
+            Sprite sprite = GetCardSprite(cards[i]);
+            _tableCards[i].GetComponent<Image>().sprite = sprite;
+        }
+    }
+
+    #endregion
+
+    /// <summary>
     /// Sets the board's GridLayoutGroup padding based on the board size
     /// </summary>
     /// <param name="boardSize">The maximum number of cards that will be on the board</param>
@@ -76,8 +97,6 @@ public class BoardUI : MonoBehaviour
         glg.padding.top = (int)((rectTransform.sizeDelta.y - glg.cellSize.y * rows - glg.spacing.y * (rows - 1)) / 2);
         glg.padding.left = (int)((rectTransform.sizeDelta.x - glg.cellSize.x * columns - glg.spacing.x * (columns - 1)) / 2);
     }
-
-    #endregion
 
     /// <summary>
     /// Retrieves sprites for all the cards from the Textures folder in Resources. 
@@ -95,10 +114,11 @@ public class BoardUI : MonoBehaviour
     /// <summary>
     /// Fetches a card sprite from the dictionary.
     /// </summary>
-    /// <param name="name">The name of the card to retrieve in the form of {rank}_{suit}.</param>
-    /// <returns>The sprite of the card with the given name, null if not found.</returns>
-    public Sprite GetCardSpriteByName(string name)
+    /// <param name="card">The card to retrieve a sprite of.</param>
+    /// <returns>The sprite of the card, null if not found.</returns>
+    public Sprite GetCardSprite(Card card)
     {
+        string name = $"{card.Rank}_{card.Suit}";
         if (_cardSprites.ContainsKey(name))
             return _cardSprites[name];
         else
