@@ -43,7 +43,10 @@ public class BoardUI : MonoBehaviour
         SetBoardLayout(boardSize);
 
         if (_tableCards != null && _tableCards.Length == boardSize)
+        {
+            EventManager.FinishSetUp();
             return;
+        }
 
         if (_tableCards != null)
         {
@@ -54,6 +57,8 @@ public class BoardUI : MonoBehaviour
         _tableCards = new RectTransform[boardSize];
         for (int i = 0; i < boardSize; i++)
             _tableCards[i] = Instantiate(_tableCard, _board).GetComponent<RectTransform>();
+
+        EventManager.FinishSetUp();
     }
 
     /// <summary>
