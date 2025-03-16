@@ -18,4 +18,8 @@ public static class EventManager
     // Starting Cards Dealt Event
     public static event Action<List<Card>> StartingCardsDealt;
     public static void DealtStartingCards(List<Card> cards) => StartingCardsDealt?.Invoke(cards);
+
+    // Clicked Card Event
+    public static event Action<Card, bool> ClickedCard;
+    public static void ClickCard(Card card, bool selected) => ClickedCard?.Invoke(card, selected);
 }
