@@ -44,12 +44,14 @@ public class Elevens : MonoBehaviour
     {
         EventManager.GameStarting += OnStartGame;
         EventManager.GameSetUp += OnFinishSetUp;
+        EventManager.ClickedCard += OnClickedCard;
     }
 
     private void OnDisable()
     {
         EventManager.GameStarting -= OnStartGame;
         EventManager.GameSetUp -= OnFinishSetUp;
+        EventManager.ClickedCard -= OnClickedCard;
     }
 
     #endregion
@@ -58,6 +60,13 @@ public class Elevens : MonoBehaviour
 
     private void OnStartGame() => SetUp();
     private void OnFinishSetUp() => FillTable();
+    private void OnClickedCard(Card card, bool selected)
+    {
+        if (selected)
+            SelectCard(card);
+        else
+            DeselectCard(card);
+    }
 
     /// <summary>
     /// Response to the player's replace request. Validates the request and 
@@ -116,7 +125,13 @@ public class Elevens : MonoBehaviour
     /// Adds the given card to the selected cards list
     /// </summary>
     /// <param name="card">The card to be selected</param>
-    public void SelectCard(Card card) => _selectedCards.Add(card);
+    public void SelectCard(Card card)
+    {
+        if (_selectedCards.Contains(card))
+            return;
+
+        _selectedCards.Add(card);
+    }
 
     /// <summary>
     /// Removes the given card from the selected cards list
