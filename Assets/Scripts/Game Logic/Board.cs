@@ -12,12 +12,13 @@
  * + ContainsRank(card : Card, rank : Rank)                      *
  *****************************************************************/
 
+using System;
 using System.Collections.Generic;
 
 public class Board
 {
     public Deck Deck { get; private set; }
-    public List<Card> TableCards { get; private set; }
+    public Card[] TableCards { get; private set; }
 
     private int _size;
 
@@ -26,13 +27,13 @@ public class Board
         _size = size;
         Deck = new Deck();
         Deck.Shuffle();
-        TableCards = new List<Card>(size);
+        TableCards = new Card[size];
     }
 
     public void DealStartingCards()
     {
         for (int i = 0; i < _size; i++)
-            TableCards.Add(Deck.TakeTopCard());
+            TableCards[i] = Deck.TakeTopCard();
     }
 
     /// <summary>
@@ -45,40 +46,19 @@ public class Board
     public void ReplaceCards(int index1, int index2, int index3 = -1)
     {
         // Index out of bounds checks
-        bool index1oob = index1 < 0 || index1 >= TableCards.Count;
-        bool index2oob = index2 < 0 || index2 >= TableCards.Count;
-        bool index3oob = index3 >= TableCards.Count;
+        bool index1oob = index1 < 0 || index1 >= TableCards.Length;
+        bool index2oob = index2 < 0 || index2 >= TableCards.Length;
+        bool index3oob = index3 >= TableCards.Length;
         if (index1oob || index2oob || index3oob)
             return;
 
         bool triplet = index3 < 0;
 
-        // Remove cards from table
-        TableCards.RemoveAt(index1);
-        TableCards.RemoveAt(index2);
+        // Replace cards on the table
+        TableCards[index1] = Deck.TakeTopCard();
+        TableCards[index2] = Deck.TakeTopCard();
         if (triplet) 
-            TableCards.RemoveAt(index3);
-
-        // Replace cards with top card from Deck
-        Card newCard = Deck.TakeTopCard();
-        if (newCard == null)
-            return;
-        TableCards.Insert(index1, newCard);
-
-        newCard = Deck.TakeTopCard();
-        if (newCard == null)
-            return;
-        TableCards.Insert(index2, newCard);
-
-        
-        if (!triplet)
-            return;
-
-        // Replace third card if needed
-        newCard = Deck.TakeTopCard();
-        if (newCard == null)
-            return;
-        TableCards.Insert(index3, newCard);
+            TableCards[index3] = Deck.TakeTopCard();
     }
 
     /// <summary>
