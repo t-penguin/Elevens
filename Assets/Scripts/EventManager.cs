@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 
 public static class EventManager
 {
@@ -16,10 +17,14 @@ public static class EventManager
     public static void FinishSetUp() => GameSetUp?.Invoke();
 
     // Starting Cards Dealt Event
-    public static event Action<List<Card>> StartingCardsDealt;
-    public static void DealtStartingCards(List<Card> cards) => StartingCardsDealt?.Invoke(cards);
+    public static event Action<Card[]> StartingCardsDealt;
+    public static void DealtStartingCards(Card[] cards) => StartingCardsDealt?.Invoke(cards);
 
     // Clicked Card Event
     public static event Action<Card, bool> ClickedCard;
     public static void ClickCard(Card card, bool selected) => ClickedCard?.Invoke(card, selected);
+
+    // Replaced Cards Event
+    public static event Action<Card[], List<int>> ReplacedCards;
+    public static void ReplaceCards(Card[] cards, List<int> indexes) => ReplacedCards?.Invoke(cards, indexes);
 }
