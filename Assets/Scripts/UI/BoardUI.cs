@@ -77,6 +77,7 @@ public class BoardUI : MonoBehaviour
         {
             Sprite sprite = GetCardSprite(cards[i]);
             _tableCards[i].GetComponent<Image>().sprite = sprite;
+            _tableCards[i].GetComponent<CardUI>().Card = cards[i];
         }
     }
 
