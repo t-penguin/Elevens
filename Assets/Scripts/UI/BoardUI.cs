@@ -9,8 +9,10 @@ public class BoardUI : MonoBehaviour
     [SerializeField] private RectTransform[] _tableCards;
 
     private Dictionary<string, Sprite> _cardSprites;
+    private Color _transparent = new Color(0, 0, 0, 0);
 
     private const string CARD_SPRITES_PATH = "Textures/Cards";
+    
 
     #region Monobehaviour Callbacks
 
@@ -24,12 +26,14 @@ public class BoardUI : MonoBehaviour
     {
         EventManager.GameSettingUp += OnSetUp;
         EventManager.StartingCardsDealt += OnStartingCardsDealt;
+        EventManager.ReplacedCards += OnReplacedCards;
     }
 
     private void OnDisable()
     {
         EventManager.GameSettingUp -= OnSetUp;
         EventManager.StartingCardsDealt -= OnStartingCardsDealt;
+        EventManager.ReplacedCards -= OnReplacedCards;
     }
 
     #endregion
@@ -58,7 +62,11 @@ public class BoardUI : MonoBehaviour
 
         _tableCards = new RectTransform[boardSize];
         for (int i = 0; i < boardSize; i++)
+        {
             _tableCards[i] = Instantiate(_tableCard, _board).GetComponent<RectTransform>();
+            _tableCards[i].GetComponent<Image>().color = Color.white;
+            _tableCards[i].GetComponent<CardUI>().Active = true;
+        }
 
         EventManager.FinishSetUp();
     }
@@ -68,16 +76,33 @@ public class BoardUI : MonoBehaviour
     /// Does nothing if the size of the list of cards and the table cards array don't match or the list is null.
     /// </summary>
     /// <param name="cards">A list of all the cards on the table</param>
-    private void OnStartingCardsDealt(List<Card> cards)
+    private void OnStartingCardsDealt(Card[] cards)
     {
-        if (cards == null || cards.Count != _tableCards.Length)
+        if (cards == null || cards.Length != _tableCards.Length)
             return;
 
-        for (int i = 0; i < cards.Count; i++)
+        for (int i = 0; i < cards.Length; i++)
+            SetCard(_tableCards[i], cards[i]);
+    }
+
+    /// <summary>
+    /// Response to a game's ReplacedCards event. Sets the card sprites for the cards to be replaced
+    /// </summary>
+    /// <param name="cards">The table cards array</param>
+    /// <param name="indexes">A list of cards to be replaced by their position on the board</param>
+    private void OnReplacedCards(Card[] cards, List<int> indexes)
+    {
+        foreach (int index in indexes)
         {
-            Sprite sprite = GetCardSprite(cards[i]);
-            _tableCards[i].GetComponent<Image>().sprite = sprite;
-            _tableCards[i].GetComponent<CardUI>().Card = cards[i];
+            _tableCards[index].GetComponent<CardUI>().Deselect();
+
+            if (cards[index] != null)
+                SetCard(_tableCards[index], cards[index]);
+            else
+            {
+                _tableCards[index].GetComponent<Image>().color = _transparent;
+                _tableCards[index].GetComponent<CardUI>().Active = false;
+            }
         }
     }
 
@@ -110,6 +135,18 @@ public class BoardUI : MonoBehaviour
 
         foreach (Sprite sprite in sprites)
             _cardSprites.Add(sprite.name, sprite);
+    }
+
+    /// <summary>
+    /// Sets the sprite and card of the specified card object
+    /// </summary>
+    /// <param name="cardObject">The rect transform the Image and CardUI are attached to</param>
+    /// <param name="card">The card to be set to</param>
+    private void SetCard(RectTransform cardObject, Card card)
+    {
+        Sprite cardSprite = GetCardSprite(card);
+        cardObject.GetComponent<Image>().sprite = cardSprite;
+        cardObject.GetComponent<CardUI>().Card = card;
     }
 
     /// <summary>
