@@ -20,6 +20,7 @@
  * + OnLose()                       *
  ************************************/
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -75,7 +76,18 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void OnReplace()
     {
+        if (!ValidateReplace()) 
+            return;
 
+        int numCards = _selectedCards.Count;
+
+        List<int> indexes = new List<int>(numCards);
+        foreach (Card card in _selectedCards)
+            indexes.Add(Array.IndexOf(_board.TableCards, card));
+
+        _selectedCards.Clear();
+        _board.ReplaceCards(indexes);
+        EventManager.ReplaceCards(_board.TableCards, indexes);
     }
 
     /// <summary>
