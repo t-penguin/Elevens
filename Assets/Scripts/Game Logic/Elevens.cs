@@ -117,7 +117,13 @@ public class Elevens : MonoBehaviour
 
     private void FillTable()
     {
-        _board.DealStartingCards();
+        bool validStart = false;
+        while (!validStart)
+        {
+            _board.DealStartingCards();
+            validStart = ValidMoveRemaining();
+        }
+
         EventManager.DealtStartingCards(_board.TableCards);
     }
 
