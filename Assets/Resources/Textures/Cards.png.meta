@@ -288,12 +288,12 @@ TextureImporter:
       name: Two_Spades
       rect:
         serializedVersion: 2
-        x: 4
-        y: 754
-        width: 102
-        height: 142
+        x: 5
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -310,12 +310,12 @@ TextureImporter:
       name: Three_Spades
       rect:
         serializedVersion: 2
-        x: 114
-        y: 754
-        width: 102
-        height: 142
+        x: 115
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -332,12 +332,12 @@ TextureImporter:
       name: Four_Spades
       rect:
         serializedVersion: 2
-        x: 224
-        y: 754
-        width: 102
-        height: 142
+        x: 225
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -354,12 +354,12 @@ TextureImporter:
       name: Five_Spades
       rect:
         serializedVersion: 2
-        x: 334
-        y: 754
-        width: 102
-        height: 142
+        x: 335
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -376,12 +376,12 @@ TextureImporter:
       name: Six_Spades
       rect:
         serializedVersion: 2
-        x: 444
-        y: 754
-        width: 102
-        height: 142
+        x: 445
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -398,12 +398,12 @@ TextureImporter:
       name: Seven_Spades
       rect:
         serializedVersion: 2
-        x: 554
-        y: 754
-        width: 102
-        height: 142
+        x: 555
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -420,12 +420,12 @@ TextureImporter:
       name: Eight_Spades
       rect:
         serializedVersion: 2
-        x: 664
-        y: 754
-        width: 102
-        height: 142
+        x: 665
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -442,12 +442,12 @@ TextureImporter:
       name: Nine_Spades
       rect:
         serializedVersion: 2
-        x: 774
-        y: 754
-        width: 102
-        height: 142
+        x: 775
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -464,12 +464,12 @@ TextureImporter:
       name: Ten_Spades
       rect:
         serializedVersion: 2
-        x: 884
-        y: 754
-        width: 102
-        height: 142
+        x: 885
+        y: 755
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -486,12 +486,12 @@ TextureImporter:
       name: Jack_Spades
       rect:
         serializedVersion: 2
-        x: 4
-        y: 604
-        width: 102
-        height: 142
+        x: 5
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -508,12 +508,12 @@ TextureImporter:
       name: Queen_Spades
       rect:
         serializedVersion: 2
-        x: 114
-        y: 604
-        width: 102
-        height: 142
+        x: 115
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -530,12 +530,12 @@ TextureImporter:
       name: King_Spades
       rect:
         serializedVersion: 2
-        x: 224
-        y: 604
-        width: 102
-        height: 142
+        x: 225
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -552,12 +552,12 @@ TextureImporter:
       name: Ace_Spades
       rect:
         serializedVersion: 2
-        x: 334
-        y: 604
-        width: 102
-        height: 142
+        x: 335
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -574,12 +574,12 @@ TextureImporter:
       name: Back_Red
       rect:
         serializedVersion: 2
-        x: 444
-        y: 604
-        width: 102
-        height: 142
+        x: 445
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -596,12 +596,12 @@ TextureImporter:
       name: Ace_Clubs
       rect:
         serializedVersion: 2
-        x: 554
-        y: 604
-        width: 102
-        height: 142
+        x: 555
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -618,12 +618,12 @@ TextureImporter:
       name: King_Clubs
       rect:
         serializedVersion: 2
-        x: 664
-        y: 604
-        width: 102
-        height: 142
+        x: 665
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -640,12 +640,12 @@ TextureImporter:
       name: Queen_Clubs
       rect:
         serializedVersion: 2
-        x: 774
-        y: 604
-        width: 102
-        height: 142
+        x: 775
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -662,12 +662,12 @@ TextureImporter:
       name: Jack_Clubs
       rect:
         serializedVersion: 2
-        x: 884
-        y: 604
-        width: 102
-        height: 142
+        x: 885
+        y: 605
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -684,12 +684,12 @@ TextureImporter:
       name: Ten_Clubs
       rect:
         serializedVersion: 2
-        x: 4
-        y: 454
-        width: 102
-        height: 142
+        x: 5
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -706,12 +706,12 @@ TextureImporter:
       name: Nine_Clubs
       rect:
         serializedVersion: 2
-        x: 114
-        y: 454
-        width: 102
-        height: 142
+        x: 115
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -728,12 +728,12 @@ TextureImporter:
       name: Eight_Clubs
       rect:
         serializedVersion: 2
-        x: 224
-        y: 454
-        width: 102
-        height: 142
+        x: 225
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -750,12 +750,12 @@ TextureImporter:
       name: Seven_Clubs
       rect:
         serializedVersion: 2
-        x: 334
-        y: 454
-        width: 102
-        height: 142
+        x: 335
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -772,12 +772,12 @@ TextureImporter:
       name: Six_Clubs
       rect:
         serializedVersion: 2
-        x: 444
-        y: 454
-        width: 102
-        height: 142
+        x: 445
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -794,12 +794,12 @@ TextureImporter:
       name: Five_Clubs
       rect:
         serializedVersion: 2
-        x: 554
-        y: 454
-        width: 102
-        height: 142
+        x: 555
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -816,12 +816,12 @@ TextureImporter:
       name: Four_Clubs
       rect:
         serializedVersion: 2
-        x: 664
-        y: 454
-        width: 102
-        height: 142
+        x: 665
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -838,12 +838,12 @@ TextureImporter:
       name: Three_Clubs
       rect:
         serializedVersion: 2
-        x: 774
-        y: 454
-        width: 102
-        height: 142
+        x: 775
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -860,12 +860,12 @@ TextureImporter:
       name: Two_Clubs
       rect:
         serializedVersion: 2
-        x: 884
-        y: 454
-        width: 102
-        height: 142
+        x: 885
+        y: 455
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -882,12 +882,12 @@ TextureImporter:
       name: Two_Hearts
       rect:
         serializedVersion: 2
-        x: 4
-        y: 304
-        width: 102
-        height: 142
+        x: 5
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -904,12 +904,12 @@ TextureImporter:
       name: Three_Hearts
       rect:
         serializedVersion: 2
-        x: 114
-        y: 304
-        width: 102
-        height: 142
+        x: 115
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -926,12 +926,12 @@ TextureImporter:
       name: Four_Hearts
       rect:
         serializedVersion: 2
-        x: 224
-        y: 304
-        width: 102
-        height: 142
+        x: 225
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -948,12 +948,12 @@ TextureImporter:
       name: Five_Hearts
       rect:
         serializedVersion: 2
-        x: 334
-        y: 304
-        width: 102
-        height: 142
+        x: 335
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -970,12 +970,12 @@ TextureImporter:
       name: Six_Hearts
       rect:
         serializedVersion: 2
-        x: 444
-        y: 304
-        width: 102
-        height: 142
+        x: 445
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -992,12 +992,12 @@ TextureImporter:
       name: Seven_Hearts
       rect:
         serializedVersion: 2
-        x: 554
-        y: 304
-        width: 102
-        height: 142
+        x: 555
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1014,12 +1014,12 @@ TextureImporter:
       name: Eight_Hearts
       rect:
         serializedVersion: 2
-        x: 664
-        y: 304
-        width: 102
-        height: 142
+        x: 665
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1036,12 +1036,12 @@ TextureImporter:
       name: Nine_Hearts
       rect:
         serializedVersion: 2
-        x: 774
-        y: 304
-        width: 102
-        height: 142
+        x: 775
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1058,12 +1058,12 @@ TextureImporter:
       name: Ten_Hearts
       rect:
         serializedVersion: 2
-        x: 884
-        y: 304
-        width: 102
-        height: 142
+        x: 885
+        y: 305
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1080,12 +1080,12 @@ TextureImporter:
       name: Jack_Hearts
       rect:
         serializedVersion: 2
-        x: 4
-        y: 154
-        width: 102
-        height: 142
+        x: 5
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1102,12 +1102,12 @@ TextureImporter:
       name: Queen_Hearts
       rect:
         serializedVersion: 2
-        x: 114
-        y: 154
-        width: 102
-        height: 142
+        x: 115
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1124,12 +1124,12 @@ TextureImporter:
       name: King_Hearts
       rect:
         serializedVersion: 2
-        x: 224
-        y: 154
-        width: 102
-        height: 142
+        x: 225
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1146,12 +1146,12 @@ TextureImporter:
       name: Ace_Hearts
       rect:
         serializedVersion: 2
-        x: 334
-        y: 154
-        width: 102
-        height: 142
+        x: 335
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1168,12 +1168,12 @@ TextureImporter:
       name: Back_Blue
       rect:
         serializedVersion: 2
-        x: 444
-        y: 154
-        width: 102
-        height: 142
+        x: 445
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1190,12 +1190,12 @@ TextureImporter:
       name: Ace_Diamonds
       rect:
         serializedVersion: 2
-        x: 554
-        y: 154
-        width: 102
-        height: 142
+        x: 555
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1212,12 +1212,12 @@ TextureImporter:
       name: King_Diamonds
       rect:
         serializedVersion: 2
-        x: 664
-        y: 154
-        width: 102
-        height: 142
+        x: 665
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1234,12 +1234,12 @@ TextureImporter:
       name: Queen_Diamonds
       rect:
         serializedVersion: 2
-        x: 774
-        y: 154
-        width: 102
-        height: 142
+        x: 775
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1256,12 +1256,12 @@ TextureImporter:
       name: Jack_Diamonds
       rect:
         serializedVersion: 2
-        x: 884
-        y: 154
-        width: 102
-        height: 142
+        x: 885
+        y: 155
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1278,12 +1278,12 @@ TextureImporter:
       name: Ten_Diamonds
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 102
-        height: 142
+        x: 5
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1300,12 +1300,12 @@ TextureImporter:
       name: Nine_Diamonds
       rect:
         serializedVersion: 2
-        x: 114
-        y: 4
-        width: 102
-        height: 142
+        x: 115
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1322,12 +1322,12 @@ TextureImporter:
       name: Eight_Diamonds
       rect:
         serializedVersion: 2
-        x: 224
-        y: 4
-        width: 102
-        height: 142
+        x: 225
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1344,12 +1344,12 @@ TextureImporter:
       name: Seven_Diamonds
       rect:
         serializedVersion: 2
-        x: 334
-        y: 4
-        width: 102
-        height: 142
+        x: 335
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1366,12 +1366,12 @@ TextureImporter:
       name: Six_Diamonds
       rect:
         serializedVersion: 2
-        x: 444
-        y: 4
-        width: 102
-        height: 142
+        x: 445
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1388,12 +1388,12 @@ TextureImporter:
       name: Five_Diamonds
       rect:
         serializedVersion: 2
-        x: 554
-        y: 4
-        width: 102
-        height: 142
+        x: 555
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1410,12 +1410,12 @@ TextureImporter:
       name: Four_Diamonds
       rect:
         serializedVersion: 2
-        x: 664
-        y: 4
-        width: 102
-        height: 142
+        x: 665
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1432,12 +1432,12 @@ TextureImporter:
       name: Three_Diamonds
       rect:
         serializedVersion: 2
-        x: 774
-        y: 4
-        width: 102
-        height: 142
+        x: 775
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1454,12 +1454,12 @@ TextureImporter:
       name: Two_Diamonds
       rect:
         serializedVersion: 2
-        x: 884
-        y: 4
-        width: 102
-        height: 142
+        x: 885
+        y: 5
+        width: 100
+        height: 140
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
