@@ -40,25 +40,17 @@ public class Board
     /// Removes two or three cards from the table and 
     /// replaces them with cards from the deck if possible
     /// </summary>
-    /// <param name="index1">The table index of the first card to replace</param>
-    /// <param name="index2">The table index of the second card to replace</param>
-    /// <param name="index3">[Optional] The table index of the third card to replace</param>
-    public void ReplaceCards(int index1, int index2, int index3 = -1)
+    /// <param name="indexes">A list of cards to be replaced by their index in the table cards array</param>
+    public void ReplaceCards(List<int> indexes)
     {
         // Index out of bounds checks
-        bool index1oob = index1 < 0 || index1 >= TableCards.Length;
-        bool index2oob = index2 < 0 || index2 >= TableCards.Length;
-        bool index3oob = index3 >= TableCards.Length;
-        if (index1oob || index2oob || index3oob)
-            return;
-
-        bool triplet = index3 < 0;
+        foreach (int index in indexes)
+            if (index < 0 || index >= TableCards.Length)
+                return;
 
         // Replace cards on the table
-        TableCards[index1] = Deck.TakeTopCard();
-        TableCards[index2] = Deck.TakeTopCard();
-        if (triplet) 
-            TableCards[index3] = Deck.TakeTopCard();
+        foreach (int index in indexes)
+            TableCards[index] = Deck.TakeTopCard();
     }
 
     /// <summary>
