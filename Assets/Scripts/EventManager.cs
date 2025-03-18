@@ -27,4 +27,8 @@ public static class EventManager
     // Event: Cards on the table have been replaced
     public static event Action<Card[], List<int>> ReplacedCards;
     public static void ReplaceCards(Card[] cards, List<int> indexes) => ReplacedCards?.Invoke(cards, indexes);
+
+    // Event: The player has lost the game
+    public static event Action LostGame;
+    public static void Lose() => LostGame?.Invoke();
 }
