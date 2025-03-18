@@ -46,7 +46,7 @@ public class Elevens : MonoBehaviour
         EventManager.GameStarting += OnStartGame;
         EventManager.GameSetUp += OnFinishSetUp;
         EventManager.ClickedCard += OnClickedCard;
-        EventManager.LostGame += OnLose;
+        EventManager.GameLost += OnLose;
     }
 
     private void OnDisable()
@@ -54,7 +54,7 @@ public class Elevens : MonoBehaviour
         EventManager.GameStarting -= OnStartGame;
         EventManager.GameSetUp -= OnFinishSetUp;
         EventManager.ClickedCard -= OnClickedCard;
-        EventManager.LostGame -= OnLose;
+        EventManager.GameLost -= OnLose;
     }
 
     #endregion

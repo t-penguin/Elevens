@@ -12,12 +12,12 @@ public class GameUI : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.LostGame += OnLose;
+        EventManager.GameLost += OnLose;
     }
 
     private void OnDisable()
     {
-        EventManager.LostGame -= OnLose;
+        EventManager.GameLost -= OnLose;
     }
 
     #endregion
