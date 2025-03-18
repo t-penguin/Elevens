@@ -35,4 +35,8 @@ public static class EventManager
     // Event: The player has won the game
     public static event Action GameWon;
     public static void Win() => GameWon?.Invoke();
+
+    // Event: The information display needs to be updated
+    public static event Action<int, int> UpdateDisplay;
+    public static void UpdateInfo(int won, int played) => UpdateDisplay?.Invoke(won, played);
 }
