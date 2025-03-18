@@ -50,6 +50,11 @@ public class BoardUI : MonoBehaviour
 
         if (_tableCards != null && _tableCards.Length == boardSize)
         {
+            foreach (RectTransform card in _tableCards)
+            {
+                card.GetComponent<Image>().color = Color.white;
+                card.GetComponent<CardUI>().Active = true;
+            }
             EventManager.FinishSetUp();
             return;
         }
