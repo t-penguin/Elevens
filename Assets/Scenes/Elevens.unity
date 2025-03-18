@@ -1593,9 +1593,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resultPanel: {fileID: 1587915324}
   _resultText: {fileID: 579301869}
-  _gamesWonText: {fileID: 0}
-  _gamesPlayedText: {fileID: 0}
-  _winRateText: {fileID: 0}
+  _gamesWonText: {fileID: 70627293}
+  _gamesPlayedText: {fileID: 455828205}
+  _winRateText: {fileID: 1059608926}
 --- !u!1 &1587915324
 GameObject:
   m_ObjectHideFlags: 0
