@@ -4,27 +4,27 @@ using UnityEditor;
 
 public static class EventManager
 {
-    // Start Game Event
+    // Event: The game is starting
     public static event Action GameStarting;
     public static void StartGame() => GameStarting?.Invoke();
 
-    // Set Up Game Event
+    // Event: The game board is being set up
     public static event Action<int> GameSettingUp;
     public static void SetUpGame(int boardSize) => GameSettingUp?.Invoke(boardSize);
 
-    // Game Set Up Event
+    // Event: The game board is done being set up
     public static event Action GameSetUp;
     public static void FinishSetUp() => GameSetUp?.Invoke();
 
-    // Starting Cards Dealt Event
+    // Event: The starting cards have been dealt
     public static event Action<Card[]> StartingCardsDealt;
     public static void DealtStartingCards(Card[] cards) => StartingCardsDealt?.Invoke(cards);
 
-    // Clicked Card Event
+    // Event: A card on the board has been clicked
     public static event Action<Card, bool> ClickedCard;
     public static void ClickCard(Card card, bool selected) => ClickedCard?.Invoke(card, selected);
 
-    // Replaced Cards Event
+    // Event: Cards on the table have been replaced
     public static event Action<Card[], List<int>> ReplacedCards;
     public static void ReplaceCards(Card[] cards, List<int> indexes) => ReplacedCards?.Invoke(cards, indexes);
 }
