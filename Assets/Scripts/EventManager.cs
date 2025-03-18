@@ -31,4 +31,8 @@ public static class EventManager
     // Event: The player has lost the game
     public static event Action GameLost;
     public static void Lose() => GameLost?.Invoke();
+
+    // Event: The player has won the game
+    public static event Action GameWon;
+    public static void Win() => GameWon?.Invoke();
 }
