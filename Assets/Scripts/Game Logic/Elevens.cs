@@ -31,6 +31,9 @@ public class Elevens : MonoBehaviour
     private int _gamesPlayed;
     private int _gamesWon;
 
+    private bool _moveMade;
+    private bool _gameEnded;
+
     private const int BOARD_SIZE = 9;
 
     #region Monobehaviour Callbacks
@@ -59,7 +62,14 @@ public class Elevens : MonoBehaviour
 
     #region Event Callbacks
 
-    private void OnStartGame() => SetUp();
+    private void OnStartGame()
+    {
+        if (_moveMade)
+            OnRestart();
+        else
+            SetUp();
+    }
+
     private void OnFinishSetUp() => FillTable();
     private void OnClickedCard(Card card, bool selected)
     {
@@ -78,6 +88,9 @@ public class Elevens : MonoBehaviour
     {
         if (!ValidateReplace()) 
             return;
+
+        if (!_moveMade)
+            _moveMade = true;
 
         int numCards = _selectedCards.Count;
 
@@ -109,7 +122,10 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void OnRestart()
     {
+        if (!_gameEnded)
+            OnLose();
 
+        SetUp();
     }
 
     /// <summary>
@@ -117,8 +133,10 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void OnWin()
     {
+        _gameEnded = true;
         _gamesWon++;
         _gamesPlayed++;
+        EventManager.UpdateInfo(_gamesWon, _gamesPlayed);
     }
 
     /// <summary>
@@ -126,7 +144,9 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void OnLose()
     {
+        _gameEnded = true;
         _gamesPlayed++;
+        EventManager.UpdateInfo(_gamesWon, _gamesPlayed);
     }
 
     #endregion
@@ -138,6 +158,8 @@ public class Elevens : MonoBehaviour
     {
         _board = new Board(BOARD_SIZE);
         _selectedCards = new List<Card>();
+        _moveMade = false;
+        _gameEnded = false;
         EventManager.SetUpGame(BOARD_SIZE);
     }
 
