@@ -46,6 +46,7 @@ public class Elevens : MonoBehaviour
         EventManager.GameStarting += OnStartGame;
         EventManager.GameSetUp += OnFinishSetUp;
         EventManager.ClickedCard += OnClickedCard;
+        EventManager.LostGame += OnLose;
     }
 
     private void OnDisable()
@@ -53,6 +54,7 @@ public class Elevens : MonoBehaviour
         EventManager.GameStarting -= OnStartGame;
         EventManager.GameSetUp -= OnFinishSetUp;
         EventManager.ClickedCard -= OnClickedCard;
+        EventManager.LostGame -= OnLose;
     }
 
     #endregion
@@ -88,6 +90,12 @@ public class Elevens : MonoBehaviour
         _selectedCards.Clear();
         _board.ReplaceCards(indexes);
         EventManager.ReplaceCards(_board.TableCards, indexes);
+
+        if(!ValidMoveRemaining())
+        {
+            EventManager.Lose();
+            return;
+        }
     }
 
     /// <summary>
@@ -112,7 +120,7 @@ public class Elevens : MonoBehaviour
     /// </summary>
     public void OnLose()
     {
-
+        _gamesPlayed++;
     }
 
     #endregion
