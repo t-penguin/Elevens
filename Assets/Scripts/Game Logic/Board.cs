@@ -63,7 +63,7 @@ public class Board
     {
         foreach (Card tableCard in TableCards)
         {
-            if (tableCard == card)
+            if (tableCard == null || tableCard == card)
                 continue;
 
             if (tableCard.Rank == rank)
@@ -71,5 +71,17 @@ public class Board
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Returns whether or not the board is empty
+    /// </summary>
+    public bool IsEmpty()
+    {
+        foreach (Card card in TableCards)
+            if (card != null)
+                return false;
+
+        return true;
     }
 }
