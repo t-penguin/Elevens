@@ -88,7 +88,8 @@ public class GameUI : MonoBehaviour
     #region Button Callbacks
 
     public void OnStartGame() => EventManager.StartGame();
-    
+
+    public void OnQuit() => Application.Quit();
 
     #endregion
 }
